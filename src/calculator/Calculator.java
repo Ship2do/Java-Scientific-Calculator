@@ -246,7 +246,32 @@ public class Calculator extends JFrame {
                     display.setText("0");
                     break;
                 case "CE":
-                    display.setText("0");
+                    if (isResultDisplayed) {
+                        display.setText("0");
+                        isResultDisplayed = false;
+                    } else {
+                        String text = display.getText();
+                        if (!text.equals("0") && !text.isEmpty()) {
+                            // 查找最后一个运算符或分隔符
+                            String operators = "+-×÷^%(),";
+                            int lastOpIndex = -1;
+                            for (int i = text.length() - 1; i >= 0; i--) {
+                                if (operators.indexOf(text.charAt(i)) != -1) {
+                                    lastOpIndex = i;
+                                    break;
+                                }
+                            }
+                            
+                            if (lastOpIndex == -1) {
+                                // 没有运算符，说明当前只有一个数字，直接清零
+                                display.setText("0");
+                            } else if (text.length() > lastOpIndex + 1) {
+                                // 保留到最后一个运算符（含），清除后面的数字
+                                display.setText(text.substring(0, lastOpIndex + 1));
+                            }
+                            // 如果以运算符结尾，CE 不做任何操作（或者可以视需求决定是否删除运算符，通常 CE 只删数字）
+                        }
+                    }
                     break;
                 case "←":
                     String text = display.getText();
