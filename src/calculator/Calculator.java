@@ -286,8 +286,11 @@ public class Calculator extends JFrame {
                     break;
                 case "sin": case "cos": case "tan": 
                 case "asin": case "acos": case "atan": 
-                case "ln": case "lg": case "sqrt":
+                case "ln": case "lg":
                     insertText(command + "(");
+                    break;
+                case "sqrt":
+                    insertText("√(");
                     break;
                 case "log":
                     insertText("log_");
@@ -362,7 +365,7 @@ public class Calculator extends JFrame {
     // 简单的递归下降解析器
     private double evaluateExpression(String expression) throws Exception {
         // 预处理
-        expression = expression.replace("×", "*").replace("÷", "/").replace("π", String.valueOf(Math.PI));
+        expression = expression.replace("×", "*").replace("÷", "/").replace("π", String.valueOf(Math.PI)).replace("√", "sqrt");
         
         final String expr = expression;
         
