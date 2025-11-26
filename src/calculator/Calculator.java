@@ -152,7 +152,7 @@ public class Calculator extends JFrame {
         scientificPanel.setBackground(new Color(240, 240, 240));
         // 第一列是显示文本(HTML)，第二列是逻辑命令
         String[][] scientificButtons = {
-            {"sin", "sin"}, {"cos", "cos"}, {"tan", "tan"}, {"ln", "ln"}, {"log", "log"}, {"√", "sqrt"},
+            {"sin", "sin"}, {"cos", "cos"}, {"tan", "tan"}, {"ln", "ln"}, {"lg", "lg"}, {"√", "sqrt"},
             {"<html>sin<sup><small>-1</small></sup></html>", "asin"}, 
             {"<html>cos<sup><small>-1</small></sup></html>", "acos"}, 
             {"<html>tan<sup><small>-1</small></sup></html>", "atan"}, 
@@ -234,7 +234,7 @@ public class Calculator extends JFrame {
     
     private void processCommand(String command) {
         if (isResultDisplayed) {
-            if (command.matches("[0-9.]|sin|cos|tan|ln|log|sqrt|asin|acos|atan|exp|pow10|\\(|π")) {
+            if (command.matches("[0-9.]|sin|cos|tan|ln|lg|sqrt|asin|acos|atan|exp|pow10|\\(|π")) {
                 display.setText("");
             }
             isResultDisplayed = false;
@@ -286,7 +286,7 @@ public class Calculator extends JFrame {
                     break;
                 case "sin": case "cos": case "tan": 
                 case "asin": case "acos": case "atan": 
-                case "ln": case "log": case "sqrt":
+                case "ln": case "lg": case "sqrt":
                     insertText(command + "(");
                     break;
                 case "logbase":
@@ -435,7 +435,7 @@ public class Calculator extends JFrame {
                             case "acos": x = Math.toDegrees(Math.acos(x)); break;
                             case "atan": x = Math.toDegrees(Math.atan(x)); break;
                             case "ln": x = Math.log(x); break;
-                            case "log": x = Math.log10(x); break;
+                            case "lg": x = Math.log10(x); break;
                             case "sqrt": x = Math.sqrt(x); break;
                             case "log_":
                                 double base = x;
