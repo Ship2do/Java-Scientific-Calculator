@@ -160,7 +160,7 @@ public class Calculator extends JFrame {
             {"<html>10<sup><small>x</small></sup></html>", "pow10"}, 
             {"<html>x<sup><small>2</small></sup></html>", "sqr"},
             {"<html>x<sup><small>y</small></sup></html>", "^"},
-            {"<html>log<sub><small>y</small></sub>x</html>", "logbase"}, // log y x
+            {"<html>log<sub><small>y</small></sub>x</html>", "log"}, // log y x
             {"π", "π"},
             {"e", "e"},
             {"(", "("}, 
@@ -170,7 +170,7 @@ public class Calculator extends JFrame {
         for (String[] btnData : scientificButtons) {
             JButton btn = createButton(btnData[0], btnData[1], new Color(240, 242, 245));
             // 特殊处理 log y x 按钮，防止换行
-            if (btnData[1].equals("logbase")) {
+            if (btnData[1].equals("log")) {
                 btn.setFont(new Font("微软雅黑", Font.BOLD, 15));
             }
             scientificPanel.add(btn);
@@ -289,7 +289,7 @@ public class Calculator extends JFrame {
                 case "ln": case "lg": case "sqrt":
                     insertText(command + "(");
                     break;
-                case "logbase":
+                case "log":
                     insertText("log_");
                     break;
                 case "e":
