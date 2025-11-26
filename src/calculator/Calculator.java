@@ -290,7 +290,7 @@ public class Calculator extends JFrame {
                     insertText(command + "(");
                     break;
                 case "logbase":
-                    insertText("logbase(");
+                    insertText("log_");
                     break;
                 case "e":
                     insertText("e");
@@ -421,23 +421,10 @@ public class Calculator extends JFrame {
                     while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
                     x = Double.parseDouble(expr.substring(startPos, this.pos));
                 } else if ((ch >= 'a' && ch <= 'z')) { // functions
-                    while ((ch >= 'a' && ch <= 'z')) nextChar();
+                    while ((ch >= 'a' && ch <= 'z') || ch == '_') nextChar();
                     String func = expr.substring(startPos, this.pos);
                     if (func.equals("e")) {
                         x = Math.E;
-                    } else if (func.equals("logbase")) {
-                        if (eat('(')) {
-                            double base = parseExpression();
-                            if (eat(',')) {
-                                double val = parseExpression();
-                                eat(')');
-                                x = Math.log(val) / Math.log(base);
-                            } else {
-                                throw new RuntimeException("Expected ','");
-                            }
-                        } else {
-                            throw new RuntimeException("Expected '('");
-                        }
                     } else {
                         x = parseFactor();
                         switch (func) {
@@ -450,6 +437,16 @@ public class Calculator extends JFrame {
                             case "ln": x = Math.log(x); break;
                             case "log": x = Math.log10(x); break;
                             case "sqrt": x = Math.sqrt(x); break;
+                            case "log_":
+                                double base = x;
+                                if (eat('(')) {
+                                    double val = parseExpression();
+                                    eat(')');
+                                    x = Math.log(val) / Math.log(base);
+                                } else {
+                                    throw new RuntimeException("Expected '(' after log base");
+                                }
+                                break;
                             default: throw new RuntimeException("Unknown function: " + func);
                         }
                     }
