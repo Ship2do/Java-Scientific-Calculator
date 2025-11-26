@@ -20,6 +20,12 @@ A robust scientific calculator application built with Java Swing, featuring a cu
 *   **Theme Support**: Toggle between a clean, muted Light Mode and a comfortable Dark Mode.
 *   **Responsive Design**: The window automatically expands and contracts when the history panel is toggled.
 
+### Download & Install
+You can download the latest executable version from the [Releases](../../releases) page.
+*   **Windows**: Download `Java-Scientific-Calculator.exe` and double-click to run.
+*   **Cross-Platform**: Download `calculator.jar` and run with `java -jar calculator.jar`.
+*   *Note: Java Runtime Environment (JRE) is required.*
+
 ### How to Run
 
 #### Prerequisites
@@ -60,6 +66,12 @@ A robust scientific calculator application built with Java Swing, featuring a cu
     *   一键清空所有历史记录。
 *   **主题支持**: 支持在素雅的浅色模式和舒适的深色模式之间一键切换。
 *   **响应式设计**: 切换历史记录显示时，窗口宽度会自动调整以适应布局。
+
+### 下载与安装
+您可以从 [Releases](../../releases) 页面下载最新的可执行版本。
+*   **Windows 用户**: 下载 `Java-Scientific-Calculator.exe` 并双击运行。
+*   **跨平台用户**: 下载 `calculator.jar` 并通过命令 `java -jar calculator.jar` 运行。
+*   *注意：运行程序需要安装 Java 运行环境 (JRE)。*
 
 ### 如何运行
 
