@@ -20,6 +20,13 @@ A robust scientific calculator application built with Java Swing, featuring a cu
 *   **Theme Support**: Toggle between a clean, muted Light Mode and a comfortable Dark Mode.
 *   **Responsive Design**: The window automatically expands and contracts when the history panel is toggled.
 
+### Screenshots
+<p align="center">
+  <img src="lightmode.png" alt="Light Mode" width="45%">
+  &nbsp; &nbsp;
+  <img src="darkmode.png" alt="Dark Mode" width="45%">
+</p>
+
 ### Download & Install
 You can download the latest executable version from the [Releases](../../releases) page.
 *   **Windows**: Download `Java-Scientific-Calculator.exe` and double-click to run.
@@ -66,6 +73,13 @@ You can download the latest executable version from the [Releases](../../release
     *   一键清空所有历史记录。
 *   **主题支持**: 支持在素雅的浅色模式和舒适的深色模式之间一键切换。
 *   **响应式设计**: 切换历史记录显示时，窗口宽度会自动调整以适应布局。
+
+### 截图预览
+<p align="center">
+  <img src="lightmode.png" alt="浅色模式" width="45%">
+  &nbsp; &nbsp;
+  <img src="darkmode.png" alt="深色模式" width="45%">
+</p>
 
 ### 下载与安装
 您可以从 [Releases](../../releases) 页面下载最新的可执行版本。
